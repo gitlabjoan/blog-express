@@ -30,7 +30,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/form', (req, res) => {
-    res.render('form', {  })
+    res.render('form', {})
 });
 
 /* {---------- WE PARSE THE DATA TO JSON ----------} */
