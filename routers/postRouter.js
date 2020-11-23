@@ -11,7 +11,7 @@ const router = new express.Router()
 
 /* {---------- POST ----------} */
 router.post('/posts', async (req, res) => {
-    const test = new postModel(req.body)
+    const post = new postModel(req.body)
 
     try {
         await post.save() 
@@ -24,8 +24,8 @@ router.post('/posts', async (req, res) => {
 /* {---------- GET ----------} */
 router.get('/posts', async (req, res) => {
     try {
-        const entrada = await postModel.find({})
-        res.send(entrada)
+        const post = await postModel.find({})
+        res.send(post)
     } catch (e) {
         res.status(500).send()
     }
