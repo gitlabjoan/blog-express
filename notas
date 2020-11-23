@@ -1,0 +1,30 @@
+[1]- Instalar los paquetes
+
+0- Crear el archivo package.json // npm init
+1- instalat nodemon // npm i -D (--save-dev) nodemon
+2- instalar dotenv // npm i -D (--save-dev) dotenv
+
+3- instalar ejs // npm i  ejs
+4- instalar express // npm i  express
+5- instalar mongoose // npm i  mongoose
+6- instalar sass // npm i  sass
+
+[2]- Configurar los escripts
+
+"start": "node app.js",
+"dev": "nodemon -r dotenv/config app.js"
+"sass": "sass --watch src/:public/css/ --> crear carpeta /src y mover  /app.js dentro, crear  /styles.scss dentro de src
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+devDependencies are modules which are only required during development, while dependencies are modules which are also required at runtime.
+To save a dependency as a devDependency on installation we need to do an npm install --save-dev
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Crear un nuevo proyecto git "blog-express" en GitHub/Heroku que implemente una REST API para cada post de un blog:
+
+post { title, snippet, body}
+
+index.ejs debe mostrar todos los posts figurando sólo el title y el snippet. Estos posts deben enlazarse para poder ser visualizado su body.
+form.ejs debe mostrar un formulario para introducir los campos del post
+
+Usar sass para los estilos.

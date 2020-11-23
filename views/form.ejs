@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- INPORTING HEAD -->
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <!-- IMPORTING NAV -->
+    <%- include("./partials/nav.ejs") %>
+
+    <main>
+        <form action="api/blogs" method="POST">
+
+            <label for="title">Titulo:</label><br>
+            <input type="text" name="title"><br>
+            <label for="snippet">Snippet:</label><br>
+            <textarea name="snippet"></textarea><br>
+            <label for="body">Body:</label><br>
+            <textarea name="body"></textarea><br>
+            <input type="submit" value="Publicar">
+
+        </form>
+
+    </main>
+    <!-- IMPORTING THE FOOTER -->
+    <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

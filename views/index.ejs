@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- INPORTING HEAD -->
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <!-- IMPORTING NAV -->
+    <%- include("./partials/nav.ejs") %>
+    <main>
+        <div>
+            <!-- here goes posts -->
+            <% if(posts.lenght > 0) { %>
+                <% posts.forEach( ( post ) => { %>
+                    <p> <%= post.title %>   </p>
+                    <p> <%= post.snippet %> </p>
+                    <p> <%= post.body %>    </p>
+             <%  }) %>
+           <% } else { %>
+            <p>No posts publishet yet.</p>
+          <% } %>
+        </div>
+
+    </main>
+    <!-- IMPORTING THE FOOTER -->
+    <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>
