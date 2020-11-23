@@ -23,9 +23,9 @@ router.post('/posts', async (req, res) => {
 
 /* {---------- GET ----------} */
 router.get('/posts', async (req, res) => {
+    const posts = await postModel.find({})
     try {
-        const post = await postModel.find({})
-        res.send(post)
+        res.send(posts)
     } catch (e) {
         res.status(500).send()
     }
