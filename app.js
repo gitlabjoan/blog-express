@@ -23,10 +23,20 @@ app.use( express.static('public') );
 
 /* {---------- RUTAS WEB ----------} */
 
-app.get('/', async (req, res) => {
+/* app.get('/', async (req, res) => {
     await postModel.find({}).then((data) => {
         res.render('index', { posts: data })
     });
+}); */
+
+app.get('/', async (req, res) => {
+    try{
+        const posts = await postModel.find({}) 
+        res.render('index', { posts })
+    } catch (error) {
+        res.render('index', { posts: []})
+    }
+   
 });
 
 app.get('/form', (req, res) => {
