@@ -7,16 +7,9 @@
     <!-- IMPORTING NAV -->
     <%- include("./partials/nav.ejs") %>
     <main>
-        <div>
-            <% if(posts.length > 0) { %>
-            <% posts.forEach( ( post ) => { %>
-            <h1> <%= post.title %>  </h1>
-            <h2> <%= post.snippet %> </h2>
-            <p> <%= post.body %> </p>
-            <%  }) %>
-            <% } else { %>
-            <p>No posts publishet yet.</p>
-            <% } %>
+        <div >
+            <h2><%- post.title	%></h2>
+            <p><%- post.body	%></p>
         </div>
     </main>
 

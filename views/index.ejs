@@ -13,6 +13,7 @@
                 <% posts.forEach( ( post ) => { %>
                     <h1> <a href="/blogBody"> <%= post.title %>   </a> </h1>
                     <h2> <p> <%= post.snippet %> </p> </h2>
+                    <a href="<%= "/full-post/"+post._id %>">View Post</a>
              <%  }) %>
            <% } else { %>
             <p>No posts publishet yet.</p>
