@@ -31,7 +31,7 @@ app.use( express.static('public') );
 
 app.get('/', async (req, res) => {
     try{
-        const posts = await postModel.find({}) 
+        const posts = await postModel.find() 
         res.render('index', { posts })
     } catch (error) {
         res.render('index', { posts: []})
