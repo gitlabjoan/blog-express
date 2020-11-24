@@ -28,3 +28,6 @@ index.ejs debe mostrar todos los posts figurando sólo el title y el snippet. Es
 form.ejs debe mostrar un formulario para introducir los campos del post
 
 Usar sass para los estilos.
+
+heroku logs -s app  
+heroku git:remote -a blog-express-joan
