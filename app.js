@@ -34,6 +34,7 @@ app.get('/form', (req, res) => {
 });
 
 /* {---------- WE PARSE THE DATA TO JSON ----------} */
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(express.json());
 
 /* {---------- API ROUTING ----------} */

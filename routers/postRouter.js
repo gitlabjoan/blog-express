@@ -23,9 +23,10 @@ router.post('/posts', async (req, res) => {
 
 /* {---------- GET ----------} */
 router.get('/posts', async (req, res) => {
-    const post = await postModel.find({})
+    
     try {
-        res.send(post)
+        const posts = await postModel.find({})
+        res.send(posts)
     } catch (e) {
         res.status(500).send()
     }
