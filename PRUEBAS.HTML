@@ -1,0 +1,8 @@
+app.get('/path', async (req, res) => {
+    try {
+        const model = await Model.find({})
+        res.render('index', { title: 'title', model });
+    } catch (error) {
+        res.render('index', {title: 'title', model: []})
+    }
+})

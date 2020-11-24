@@ -32,5 +32,21 @@ router.get('/posts', async (req, res) => {
     }
 });
 
+router.get('/posts/:id', async (req, res) => {
+    const _id = req.params.id
+
+    try {
+        const resource = await postModel.findById(_id)
+
+        if (!resource) {
+            return res.status(404).send()
+        }
+
+        res.send(resource)
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
 /* Exporting REST-API */
 module.exports = router;
