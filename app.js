@@ -27,14 +27,13 @@ app.get('/', async (req, res) => {
         const posts = await postModel.find({}) 
         res.render('index', { title:'Blog', posts })
     } catch (error) {
-        res.render('index', {  title:'Blog', posts:[] })
+        res.render('index', {  title:'Blog', posts:'[]' })
     }
    
 });
 
-
 app.get('/form', (req, res) => {
-    res.render('form', {})
+    res.render('form', {title: 'form'})
 });
 
 /* {---------- WE PARSE THE DATA TO JSON ----------} */
@@ -46,5 +45,5 @@ app.use('/api', postRouter);
 
 /* {---------- 404 ERROR ----------} */
 app.use((req, res) => {
-    res.status(404).render('404', {});
+    res.status(404).render('404', {title:'404'});
 });
