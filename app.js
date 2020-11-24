@@ -10,7 +10,7 @@ const postModel = require('./models/postModel.js');
 const postRouter = require('./routers/postRouter.js');
 
 /* {---------- PORT CONNECTION ----------} */
-const port = process.env.PORT || 3001;
+const port = process.env.PORT;
 
 /* {---------- APP PORT LISTENING ----------} */
 app.listen( port, () => {console.log( `Listening to port ${port}` )} );
@@ -25,6 +25,7 @@ app.use( express.static('public') );
 app.get('/', async (req, res) => {
     try{
         const posts = await postModel.find({}) 
+        console.log('posts', posts);
         res.render('index', { title:'Blog', posts })
     } catch (error) {
         res.render('index', {  title:'Blog', posts:'[]' })
