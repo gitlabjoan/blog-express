@@ -25,10 +25,10 @@ app.use( express.static('public') );
 app.get('/', async (req, res) => {
     try{
         const posts = await postModel.find({}) 
-        console.log('posts', posts);
+        
         res.render('index', { title:'Blog', posts })
     } catch (error) {
-        res.render('index', {  title:'Blog', posts:'[]' })
+        res.render('index', {  title:'Blog', posts:[] })
     }
    
 });
