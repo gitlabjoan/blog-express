@@ -37,8 +37,9 @@ app.get('/form', (req, res) => {
     res.render('form', {title: 'form'})
 });
 
-app.get('/blogBody', (req, res) => {
-    res.render('blogBody', {title: 'blogBody'})
+app.get('/blogBody/:id', async(req, res) => {
+	const post = await postModel.findById(req.params.id)
+	res.render('blogBody', { titulo: 'Post', post});
 });
 
 /* {---------- WE PARSE THE DATA TO JSON ----------} */
