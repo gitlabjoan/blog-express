@@ -26,9 +26,9 @@ router.get('/posts', async (req, res) => {
     
     try {
         const posts = await postModel.find({})
-        res.send(posts)
+        return res.send(posts)
     } catch (e) {
-        res.status(500).send()
+        return res.status(500).send()
     }
 });
 
