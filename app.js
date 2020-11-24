@@ -38,7 +38,7 @@ app.get('/form', (req, res) => {
 });
 
 app.get('/blogBody', (req, res) => {
-    res.render('form', {title: 'blogBody'})
+    res.render('blogBody', {title: 'blogBody'})
 });
 
 /* {---------- WE PARSE THE DATA TO JSON ----------} */
