@@ -7,18 +7,23 @@
     <!-- IMPORTING NAV -->
     <%- include("./partials/nav.ejs") %>
     <main>
-        <div>
-            <!-- here goes posts -->
-            <% if(posts.length > 0) { %>
-                <% posts.forEach( ( post ) => { %>
-                    <h1> <a href="/blogBody"> <%= post.title %>   </a> </h1>
-                    <h2> <p> <%= post.snippet %> </p> </h2>
-                    <a href="<%= "/blogBody/"+post._id %>">View Post</a>
-             <%  }) %>
-           <% } else { %>
-            <p>No posts publishet yet.</p>
-          <% } %>
-        </div>
+        <%- include("./partials/articles.ejs") %>
+        
+         
+        <section>
+            <article class="post">
+                <% if(posts.length > 0) { %>
+                    <% posts.forEach( ( post ) => { %>
+                        <h1> <a href="/blogBody"> <%= post.title %>   </a> </h1>
+                        <h2> <%= post.snippet %>  </h2>
+                        <p><a href="<%= "/blogBody/"+post._id %>">View Post</a></p>
+                 <%  }) %>
+               <% } else { %>
+                <p>No posts publishet yet.</p>
+              <% } %>
+            </article>
+            
+        </section>  
 
     </main>
     <!-- IMPORTING THE FOOTER -->
