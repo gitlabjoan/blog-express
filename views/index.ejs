@@ -11,8 +11,8 @@
             <!-- here goes posts -->
             <% if(posts.length > 0) { %>
                 <% posts.forEach( ( post ) => { %>
-                     <a href="/blogBody"></a> <%= post.title %>   </a>
-                    <p> <%= post.snippet %> </p>
+                    <h1><a href="/blogBody"></a> <%= post.title %>   </a></h1>
+                    <h2> <p> <%= post.snippet %> </p> </h2>
              <%  }) %>
            <% } else { %>
             <p>No posts publishet yet.</p>
