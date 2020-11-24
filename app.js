@@ -39,6 +39,10 @@ app.get('/', async (req, res) => {
    
 });
 
+app.get('/index', (req, res) => {
+    res.render('index', {})
+});
+
 app.get('/form', (req, res) => {
     res.render('form', {})
 });
