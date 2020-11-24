@@ -7,10 +7,17 @@
     <!-- IMPORTING NAV -->
     <%- include("./partials/nav.ejs") %>
     <main>
-        <h1>post.title</h1>
-        <p>post.body</p>
-
-
+        <div>
+            <% if(posts.length > 0) { %>
+            <% posts.forEach( ( post ) => { %>
+            <h1> <%= post.title %>  </h1>
+            <h2> <%= post.snippet %> </h2>
+            <p> <%= post.body %> </p>
+            <%  }) %>
+            <% } else { %>
+            <p>No posts publishet yet.</p>
+            <% } %>
+        </div>
     </main>
 
     <!-- IMPORTING THE FOOTER -->
